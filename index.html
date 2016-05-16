@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<style>
+			.reveal .backgrounds {
+				background-position-y: 100% !important;
+			}
+
+			.reveal section img.plain {
+				background: none;
+			}
+		</style>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img src="http://reactivex.io/assets/Rx_Logo_S.png" class="plain">
+					<h1>RxJS</h1>
+					<h2>The Reactive Extensions<br>for JavaScript</h2>
+				</section>
+				<section>
+					slide 2
+				</section>
+				<section>
+					slide 3
+				</section>
+				<section>
+					slide 4
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				slideNumber: true,
+				loop: true,
+				mouseWheel: true,
+				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				parallaxBackgroundSize: '2520px 1080px',
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				}, {
+					src: 'plugin/markdown/markdown.js'
+				}, {
+					src: 'plugin/notes/notes.js',
+					async: true
+				}, {
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}, {
+					src: 'socket.io/socket.io.js',
+					async: true
+				}, {
+					src: 'plugin/notes-server/client.js',
+					async: true
+				}]
+			});
+		</script>
+	</body>
+
+</html>
