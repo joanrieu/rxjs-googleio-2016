@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/blood.css">
+		<style>
+			.reveal .backgrounds {
+				background-position-y: 100% !important;
+			}
+
+			.reveal section img.plain {
+				background: none;
+			}
+
+			.reveal section td {
+				text-align: center;
+				vertical-align: middle;
+			}
+
+			.reveal section td.head {
+				font-weight: bold;
+			}
+		</style>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement('link');
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		</script>
+	</head>
+
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section>
+					<h1>RxJS</h1>
+					<img src="http://reactivex.io/assets/Rx_Logo_S.png" class="plain">
+					<h2>The Reactive Extensions<br>for JavaScript</h2>
+					<br style="height: 5em">
+					<small style="background: #222; border: 1px solid black; font-size: 50%; padding: .2em .4em;">Joan Rieu &mdash; Google IO Extended 2016 Bordeaux</small>
+				</section>
+
+				<section>
+					<h3>Value sources</h3>
+					<table>
+						<tr>
+							<td></td>
+							<td class="head">Single</td>
+							<td class="head">Multiple</td>
+						</tr>
+						<tr>
+							<td class="head">Synchronous</td>
+							<td>Function</td>
+							<td>Iterable<br>Enumerable</td>
+						</tr>
+						<tr>
+							<td class="head">Asynchronous</td>
+							<td>Promise</td>
+							<td style="color: red">Rx.Observable</td>
+						</tr>
+					</table>
+				</section>
+
+				<section>
+					<h3>Operators</h3>
+					<h4>(1/4)</h4>
+					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/filter.png">
+				</section>
+
+				<section>
+					<h3>Operators</h3>
+					<h4>(2/4)</h4>
+					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/map.png">
+				</section>
+
+				<section>
+					<h3>Operators</h3>
+					<h4>(3/4)</h4>
+					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/combineLatest.png">
+				</section>
+
+				<section>
+					<h3>Operators</h3>
+					<h4>(4/4)</h4>
+					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/ops-short.png">
+					<br>
+					Total: 178 operators
+				</section>
+
+				<section>
+					<h3>Uses</h3>
+					<h4>Data streaming</h4>
+					<ul>
+						<li>À la <em>Apache Spark</em></li>
+						<li>One-by-one transformation</li>
+						<li>Bulk operations (<em>window</em>)</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Uses</h3>
+					<h4>Real-time math</h4>
+					<ul>
+						<li>Built-in operators</li>
+						<li>Automatic dependencies</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Uses</h3>
+					<h4>User interface</h4>
+					<ul>
+						<li>Angular 2</li>
+						<li>React & Flux</li>
+						<li>Vue.js</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Compatibility</h3>
+					<ul>
+						<li>Most UI frameworks</li>
+						<li>DOM events</li>
+						<li>Promises</li>
+						<li>Node.js callbacks</li>
+						<li>Socket.io</li>
+						<li>&hellip;</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Case study</h3>
+					<h4>Autocomplete</h4>
+					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/autocomplete.png">
+				</section>
+
+				<section>
+					<h3>Case study</h3>
+					<h4>Autocomplete</h4>
+					<ul>
+						<li>Multiple requests</li>
+						<li>Asynchronous callbacks</li>
+						<li>Out-of-order responses</li>
+						<li>&hellip;</li>
+					</ul>
+					<br>
+					☹
+				</section>
+
+				<section>
+					<h3>Case study</h3>
+					<h4>Autocomplete</h4>
+					<pre><code style="line-height: 1.5">
+	Rx.Observable.fromEvent(input, 'keyup')
+		.map(e => e.target.value)
+		.filter(input => input.length > 3)
+		.debounce(250)
+		.distinctUntilChanged()
+		.flatMapLatest(input => searchAsync(input).retry(3))
+		.subscribe(showResults)
+					</code></pre>
+				</section>
+
+				<section>
+					<h3>TL; DR</h3>
+					<h4>RxJS is good for your code</h4>
+					<ul>
+						<li>Concise</li>
+						<li>Readable & maintainable</li>
+						<li>Efficient</li>
+						<li>Favors standards (ES 7)</li>
+						<li>Compatible with everything</li>
+						<li>Used more and more</li>
+						<li>Supported by Microsoft</li>
+						<li>Has a huge community</li>
+						<li>Lots of Stack Overflow answers</li>
+					</ul>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				slideNumber: true,
+				loop: true,
+				mouseWheel: true,
+				parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				parallaxBackgroundSize: '2520px 1080px',
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				}, {
+					src: 'plugin/markdown/markdown.js'
+				}, {
+					src: 'plugin/notes/notes.js',
+					async: true
+				}, {
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function () {
+						hljs.initHighlightingOnLoad();
+					}
+				}, {
+					src: 'socket.io/socket.io.js',
+					async: true
+				}, {
+					src: 'plugin/notes-server/client.js',
+					async: true
+				}]
+			});
+		</script>
+	</body>
+
+</html>
