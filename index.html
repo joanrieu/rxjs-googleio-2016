@@ -7,8 +7,8 @@
 
 		<title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/blood.css">
+		<link rel="stylesheet" href="reveal.js/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js/css/theme/blood.css">
 		<style>
 			.reveal .backgrounds {
 				background-position-y: 100% !important;
@@ -29,14 +29,14 @@
 		</style>
 
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement('link');
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
 			document.getElementsByTagName('head')[0].appendChild(link);
 		</script>
 	</head>
@@ -78,25 +78,25 @@
 				<section>
 					<h3>Operators</h3>
 					<h4>(1/4)</h4>
-					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/filter.png">
+					<img src="filter.png">
 				</section>
 
 				<section>
 					<h3>Operators</h3>
 					<h4>(2/4)</h4>
-					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/map.png">
+					<img src="map.png">
 				</section>
 
 				<section>
 					<h3>Operators</h3>
 					<h4>(3/4)</h4>
-					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/combineLatest.png">
+					<img src="combineLatest.png">
 				</section>
 
 				<section>
 					<h3>Operators</h3>
 					<h4>(4/4)</h4>
-					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/ops-short.png">
+					<img src="ops-short.png">
 					<br>
 					Total: 178 operators
 				</section>
@@ -145,7 +145,7 @@
 				<section>
 					<h3>Case study</h3>
 					<h4>Autocomplete</h4>
-					<img src="https://preview.c9users.io/joanrieu/rxjs-googleio-2016/autocomplete.png">
+					<img src="autocomplete.png">
 				</section>
 
 				<section>
@@ -194,8 +194,8 @@
 			</div>
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+		<script src="reveal.js/lib/js/head.min.js"></script>
+		<script src="reveal.js/js/reveal.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
@@ -209,24 +209,14 @@
 
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [{
-					src: 'plugin/markdown/marked.js'
-				}, {
-					src: 'plugin/markdown/markdown.js'
-				}, {
-					src: 'plugin/notes/notes.js',
+					src: 'reveal.js/plugin/notes/notes.js',
 					async: true
 				}, {
-					src: 'plugin/highlight/highlight.js',
+					src: 'reveal.js/plugin/highlight/highlight.js',
 					async: true,
 					callback: function () {
 						hljs.initHighlightingOnLoad();
 					}
-				}, {
-					src: 'socket.io/socket.io.js',
-					async: true
-				}, {
-					src: 'plugin/notes-server/client.js',
-					async: true
 				}]
 			});
 		</script>
